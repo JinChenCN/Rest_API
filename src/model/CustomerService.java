@@ -38,4 +38,13 @@ public class CustomerService {
 		customers.add(customer);
 		return customer.getId();
 	}
+	
+	public static int deleteCustomer(int id) {
+		Customer customer = getCustomer(id);
+		if (customer != null) {
+			customers.remove(customer);
+			return 1;
+		}
+		return 0;
+	}
 }

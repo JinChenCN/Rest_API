@@ -68,4 +68,11 @@ public class CustomerController {
 			return String.valueOf(customer.getId());
 		}
 	}
+	
+	@DELETE
+	@Path("/{id}")
+	public String deleteCustomer(@PathParam("id") int id) {
+		int status = CustomerService.deleteCustomer(id);
+		return String.valueOf(status);
+	}
 }

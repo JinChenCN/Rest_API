@@ -88,5 +88,16 @@ public class JUnitTest {
 
 	@Test
 	public void testDeleteCustomer() {
+		String curUrl = url + "/1";
+		ClientResource client = new ClientResource(curUrl);
+		try {
+			Request request = new Request(Method.DELETE, curUrl);
+			Response response = client.handleOutbound(request);
+			assertTrue(response.getStatus().isSuccess());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			client.release();
+		}
 	}
 }
