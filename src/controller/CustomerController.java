@@ -24,4 +24,11 @@ public class CustomerController {
 	public List<Customer> getCustomers() {
 		return CustomerService.getCustomers();
 	}
+	
+	@GET
+	@Path("/{id}")
+	@Produces("application/json")
+	public Customer getCustomer(@PathParam("id") int id) {
+		return CustomerService.getCustomer(id);
+	}
 }

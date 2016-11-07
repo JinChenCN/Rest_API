@@ -28,4 +28,9 @@ public class CustomerService {
 		return customers;
 	}
 
+	public static Customer getCustomer(int id) {
+		Customer customer = customers.stream().filter(x -> x.getId() == id)
+				.findFirst().orElse(null);
+		return customer;
+	}
 }
