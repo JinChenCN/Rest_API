@@ -31,4 +31,21 @@ public class CustomerController {
 	public Customer getCustomer(@PathParam("id") int id) {
 		return CustomerService.getCustomer(id);
 	}
+	
+	@POST
+	public String addCustomer(Representation entity) {
+		Form form = new Form(entity);
+		String name = form.getFirstValue("name");
+		String address = form.getFirstValue("address");
+		String phoneNumber = form.getFirstValue("phoneNumber");
+
+		Customer customer = new Customer();
+		customer.setName(name);
+		customer.setAddress(address);
+		customer.setPhoneNumber(phoneNumber);
+
+		int id = CustomerService.maxId++;
+		customer.setId(id);
+		return String.valueOf(CustomerService.addCustomer(customer));
+	}
 }

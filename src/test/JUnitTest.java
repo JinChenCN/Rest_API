@@ -5,7 +5,9 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.restlet.Request;
 import org.restlet.Response;
+import org.restlet.data.Form;
 import org.restlet.data.Method;
+import org.restlet.representation.Representation;
 import org.restlet.resource.ClientResource;
 
 public class JUnitTest {
@@ -49,6 +51,23 @@ public class JUnitTest {
 
 	@Test
 	public void testAddCustomer() {
+		String curUrl = url;
+		ClientResource client = new ClientResource(curUrl);
+		try {
+			Form form = new Form();
+			form.add("name", "TESTB");
+			form.add("address", "Auckland");
+			form.add("phoneNumber", "4321");
+			Representation webRepresentation = form.getWebRepresentation();
+			Request request = new Request(Method.POST, curUrl,
+					webRepresentation);
+			Response response = client.handleOutbound(request);
+			assertTrue(response.getStatus().isSuccess());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			client.release();
+		}
 	}
 
 	@Test

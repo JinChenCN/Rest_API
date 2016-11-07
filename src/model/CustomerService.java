@@ -33,4 +33,9 @@ public class CustomerService {
 				.findFirst().orElse(null);
 		return customer;
 	}
+	
+	public static int addCustomer(Customer customer) {
+		customers.add(customer);
+		return customer.getId();
+	}
 }
