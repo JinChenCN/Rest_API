@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.annotations.jar"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.core.jar"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.csv.jar"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.databind.jar"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.jaxb.jar"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.jsonschema.jar"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.smile.jar"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.xml.jar"/>
+	<classpathentry kind="lib" path="lib/com.fasterxml.jackson.yaml.jar"/>
+	<classpathentry kind="lib" path="lib/javax.ws.rs.jar"/>
+	<classpathentry kind="lib" path="lib/org.apache.commons.logging.jar"/>
+	<classpathentry kind="lib" path="lib/org.apache.httpclient.jar"/>
+	<classpathentry kind="lib" path="lib/org.apache.httpcore.jar"/>
+	<classpathentry kind="lib" path="lib/org.hamcrest.jar"/>
+	<classpathentry kind="lib" path="lib/org.json.jar"/>
+	<classpathentry kind="lib" path="lib/org.junit.jar"/>
+	<classpathentry kind="lib" path="lib/org.restlet.ext.httpclient.jar"/>
+	<classpathentry kind="lib" path="lib/org.restlet.ext.jackson.jar"/>
+	<classpathentry kind="lib" path="lib/org.restlet.ext.jaxrs.jar"/>
+	<classpathentry kind="lib" path="lib/org.restlet.ext.json.jar"/>
+	<classpathentry kind="lib" path="lib/org.restlet.jar"/>
+	<classpathentry kind="lib" path="lib/org.simpleframework.xml.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
