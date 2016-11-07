@@ -47,6 +47,22 @@ public class JUnitTest {
 
 	@Test
 	public void testUpdateCustomer() {
+		String curUrl = url + "/2";
+		ClientResource client = new ClientResource(curUrl);
+		try {
+			Form form = new Form();
+			form.add("name", "TESTA");
+			form.add("address", "Beijing");
+			form.add("phoneNumber", "1233");
+			Representation webRepresentation = form.getWebRepresentation();
+			Request request = new Request(Method.PUT, curUrl, webRepresentation);
+			Response response = client.handleOutbound(request);
+			assertTrue(response.getStatus().isSuccess());
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			client.release();
+		}
 	}
 
 	@Test

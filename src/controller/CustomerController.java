@@ -48,4 +48,24 @@ public class CustomerController {
 		customer.setId(id);
 		return String.valueOf(CustomerService.addCustomer(customer));
 	}
+	
+	@PUT
+	@Path("/{id}")
+	public String updateCustomer(@PathParam("id") int id, Representation entity) {
+		Form form = new Form(entity);
+		Customer customer = CustomerService.getCustomer(id);
+		if (customer == null) {
+			return "null";
+		} else {
+			String name = form.getFirstValue("name");
+			String address = form.getFirstValue("address");
+			String phoneNumber = form.getFirstValue("phoneNumber");
+
+			customer.setName(name);
+			customer.setAddress(address);
+			customer.setPhoneNumber(phoneNumber);
+
+			return String.valueOf(customer.getId());
+		}
+	}
 }
